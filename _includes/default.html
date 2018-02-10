@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <!-- Opengraph styles -->
+    <meta property="og:image" content="https://kphetdev.me/assets/media/bg1.jpg">
+    <meta property="og:url" content='https://kphetdev.me{{page.url}}' />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    
     {% if site.google_analytics and jekyll.environment == 'production' %}
     {% include analytics.html %}
     {% endif %}
@@ -18,14 +26,6 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
-    <!-- Opengraph styles -->
-    <meta property="og:image" content="https://kphetdev.me/assets/media/bg1.jpg">
-    <meta property="og:url" content='https://kphetdev.me{{page.url}}'
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:description" content="{{ page.description }}" />
 
 	<link href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">

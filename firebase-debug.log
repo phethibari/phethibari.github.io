@@ -215,3 +215,41 @@
      manifest: [] } } 
  Sat Feb 10 2018 21:09:45 GMT+0700 (+07)
 [debug] [2018-02-10T14:09:47.634Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T14:28:10.041Z] ----------------------------------------------------------------------
+[debug] [2018-02-10T14:28:10.045Z] Command:       /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/node /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/firebase deploy --debug
+[debug] [2018-02-10T14:28:10.046Z] CLI Version:   3.17.4
+[debug] [2018-02-10T14:28:10.046Z] Platform:      darwin
+[debug] [2018-02-10T14:28:10.047Z] Node Version:  v8.8.1
+[debug] [2018-02-10T14:28:10.048Z] Time:          Sat Feb 10 2018 21:28:10 GMT+0700 (+07)
+[debug] [2018-02-10T14:28:10.048Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-10T14:28:10.064Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-10T14:28:10.065Z] > authorizing via signed-in user
+[debug] [2018-02-10T14:28:10.067Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/personal-firebase-4bd2d  
+  
+ Sat Feb 10 2018 21:28:10 GMT+0700 (+07)
+[debug] [2018-02-10T14:28:12.050Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T14:28:12.051Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/personal-firebase-4bd2d/tokens  
+  
+ Sat Feb 10 2018 21:28:12 GMT+0700 (+07)
+[debug] [2018-02-10T14:28:13.394Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'personal-firebase-4bd2d'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing _site directory for upload...
+[debug] [2018-02-10T14:28:16.592Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/personal-firebase-4bd2d/uploads/-L5-6Sp4f97nmYMJEtFU?fileCount=36&message=  
+  
+ Sat Feb 10 2018 21:28:16 GMT+0700 (+07)
+[debug] [2018-02-10T14:28:28.874Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T14:28:28.875Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 36 files uploaded successfully
+[debug] [2018-02-10T14:28:30.197Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/personal-firebase-4bd2d/releases  
+ { hosting: 
+   { public: '_site',
+     ignore: [ '**/.*', 'firebase.json' ],
+     version: '-L5-6Sp4f97nmYMJEtFU',
+     prefix: '-L5-6Sp4f97nmYMJEtFU/',
+     manifest: [] } } 
+ Sat Feb 10 2018 21:28:30 GMT+0700 (+07)
+[debug] [2018-02-10T14:28:33.005Z] <<< HTTP RESPONSE 200
