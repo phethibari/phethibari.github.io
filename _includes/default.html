@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% if site.google_analytics and jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
 	<meta charset="utf-8">
 	<title>{{ page.title }}</title>
 	{% if page.description %}
@@ -16,7 +19,14 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<!-- Le styles -->
+    <!-- Opengraph styles -->
+    <meta property="og:image" content="https://kphetdev.me/assets/media/bg1.jpg">
+    <meta property="og:url" content='https://kphetdev.me{{page.url}}'
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+
 	<link href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.css" rel="stylesheet">

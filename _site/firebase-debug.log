@@ -1,0 +1,132 @@
+[debug] [2018-02-10T07:49:40.842Z] ----------------------------------------------------------------------
+[debug] [2018-02-10T07:49:40.846Z] Command:       /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/node /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/firebase deploy --debug
+[debug] [2018-02-10T07:49:40.846Z] CLI Version:   3.17.4
+[debug] [2018-02-10T07:49:40.847Z] Platform:      darwin
+[debug] [2018-02-10T07:49:40.847Z] Node Version:  v8.8.1
+[debug] [2018-02-10T07:49:40.847Z] Time:          Sat Feb 10 2018 14:49:40 GMT+0700 (+07)
+[debug] [2018-02-10T07:49:40.847Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-10T07:49:40.863Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-10T07:49:40.863Z] > authorizing via signed-in user
+[debug] [2018-02-10T07:49:40.865Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-10T07:49:40.865Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/WMO4JEjuYiPtS2EKyVn3cGFSfEnvh-nBEWWjhVzyU4Q',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Feb 10 2018 14:49:40 GMT+0700 (+07)
+[debug] [2018-02-10T07:49:41.773Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T07:49:41.791Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/personal-firebase-4bd2d  
+  
+ Sat Feb 10 2018 14:49:41 GMT+0700 (+07)
+[debug] [2018-02-10T07:49:43.238Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T07:49:43.240Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/personal-firebase-4bd2d/tokens  
+  
+ Sat Feb 10 2018 14:49:43 GMT+0700 (+07)
+[debug] [2018-02-10T07:49:44.647Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'personal-firebase-4bd2d'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing _site directory for upload...
+[debug] [2018-02-10T07:49:46.147Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/personal-firebase-4bd2d/uploads/-L4ygFJquxDWgc_k3pu1?fileCount=32&message=  
+  
+ Sat Feb 10 2018 14:49:46 GMT+0700 (+07)
+[debug] [2018-02-10T07:49:51.770Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T07:49:51.770Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 32 files uploaded successfully
+[debug] [2018-02-10T07:49:52.541Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/personal-firebase-4bd2d/releases  
+ { hosting: 
+   { public: '_site',
+     ignore: [ '**/.*', 'firebase.json' ],
+     version: '-L4ygFJquxDWgc_k3pu1',
+     prefix: '-L4ygFJquxDWgc_k3pu1/',
+     manifest: [] } } 
+ Sat Feb 10 2018 14:49:52 GMT+0700 (+07)
+[debug] [2018-02-10T07:49:54.067Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T11:47:21.980Z] ----------------------------------------------------------------------
+[debug] [2018-02-10T11:47:21.985Z] Command:       /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/node /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/firebase deploy --debug
+[debug] [2018-02-10T11:47:21.985Z] CLI Version:   3.17.4
+[debug] [2018-02-10T11:47:21.985Z] Platform:      darwin
+[debug] [2018-02-10T11:47:21.985Z] Node Version:  v8.8.1
+[debug] [2018-02-10T11:47:21.986Z] Time:          Sat Feb 10 2018 18:47:21 GMT+0700 (+07)
+[debug] [2018-02-10T11:47:21.986Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-10T11:47:21.999Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-10T11:47:22.000Z] > authorizing via signed-in user
+[debug] [2018-02-10T11:47:22.002Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-10T11:47:22.002Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/WMO4JEjuYiPtS2EKyVn3cGFSfEnvh-nBEWWjhVzyU4Q',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Feb 10 2018 18:47:22 GMT+0700 (+07)
+[debug] [2018-02-10T11:47:22.645Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T11:47:22.659Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/personal-firebase-4bd2d  
+  
+ Sat Feb 10 2018 18:47:22 GMT+0700 (+07)
+[debug] [2018-02-10T11:47:23.989Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T11:47:23.991Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/personal-firebase-4bd2d/tokens  
+  
+ Sat Feb 10 2018 18:47:23 GMT+0700 (+07)
+[debug] [2018-02-10T11:47:25.316Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'personal-firebase-4bd2d'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing _site directory for upload...
+[debug] [2018-02-10T11:47:27.564Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/personal-firebase-4bd2d/uploads/-L4zXe4g4-6DXh3xtJvx?fileCount=35&message=  
+  
+ Sat Feb 10 2018 18:47:27 GMT+0700 (+07)
+[debug] [2018-02-10T11:47:34.706Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T11:47:34.706Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 35 files uploaded successfully
+[debug] [2018-02-10T11:47:35.474Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/personal-firebase-4bd2d/releases  
+ { hosting: 
+   { public: '_site',
+     ignore: [ '**/.*', 'firebase.json' ],
+     version: '-L4zXe4g4-6DXh3xtJvx',
+     prefix: '-L4zXe4g4-6DXh3xtJvx/',
+     manifest: [] } } 
+ Sat Feb 10 2018 18:47:35 GMT+0700 (+07)
+[debug] [2018-02-10T11:47:36.951Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T11:58:52.177Z] ----------------------------------------------------------------------
+[debug] [2018-02-10T11:58:52.181Z] Command:       /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/node /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/firebase deploy --debug
+[debug] [2018-02-10T11:58:52.181Z] CLI Version:   3.17.4
+[debug] [2018-02-10T11:58:52.181Z] Platform:      darwin
+[debug] [2018-02-10T11:58:52.182Z] Node Version:  v8.8.1
+[debug] [2018-02-10T11:58:52.182Z] Time:          Sat Feb 10 2018 18:58:52 GMT+0700 (+07)
+[debug] [2018-02-10T11:58:52.182Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-10T11:58:52.196Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-10T11:58:52.197Z] > authorizing via signed-in user
+[debug] [2018-02-10T11:58:52.200Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/personal-firebase-4bd2d  
+  
+ Sat Feb 10 2018 18:58:52 GMT+0700 (+07)
+[debug] [2018-02-10T11:58:53.812Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T11:58:53.813Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/personal-firebase-4bd2d/tokens  
+  
+ Sat Feb 10 2018 18:58:53 GMT+0700 (+07)
+[debug] [2018-02-10T11:58:54.892Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'personal-firebase-4bd2d'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing _site directory for upload...
+[debug] [2018-02-10T11:58:56.502Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/personal-firebase-4bd2d/uploads/-L4z_HJ0V_-s-jrgVJga?fileCount=36&message=  
+  
+ Sat Feb 10 2018 18:58:56 GMT+0700 (+07)
+[debug] [2018-02-10T11:59:08.758Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-10T11:59:08.759Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 36 files uploaded successfully
+[debug] [2018-02-10T11:59:09.675Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/personal-firebase-4bd2d/releases  
+ { hosting: 
+   { public: '_site',
+     ignore: [ '**/.*', 'firebase.json' ],
+     version: '-L4z_HJ0V_-s-jrgVJga',
+     prefix: '-L4z_HJ0V_-s-jrgVJga/',
+     manifest: [] } } 
+ Sat Feb 10 2018 18:59:09 GMT+0700 (+07)
+[debug] [2018-02-10T11:59:10.949Z] <<< HTTP RESPONSE 200

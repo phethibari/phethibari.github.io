@@ -9,6 +9,9 @@ disqus: kphetdev
 google_analytics: kphetdev
 title: kphetdev
 
+# Google Analytics
+google_analytics: UA-113900166-1
+
 defaults:
   -
     scope:

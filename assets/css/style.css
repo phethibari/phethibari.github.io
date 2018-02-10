@@ -82,8 +82,9 @@ article .share .gplus:hover {
 }
 
 .page-header {
-	color: #e74c3c;
-	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+    /* color: #e74c3c; */
+    color: #2c3e50;
+	/* text-shadow: 1px 1px 1px rgba(150, 150, 150, 1); */
 }
 
 @media only screen and (min-width: 768px) {
@@ -113,7 +114,7 @@ article {
 
 article.home div a, article.home pre a { color: #2c3e50; }
 article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
-article img { max-width: 100%; }
+article img { max-width: 100%; border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 5px; }
 
 h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
 article.home h1,
