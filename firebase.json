@@ -4,12 +4,6 @@
         "ignore": [
             "**/.*",
             "firebase.json"
-        ],
-        "headers": [{
-            "headers": [{
-                "key": "Cache-Control",
-                "value": "no-cache"
-            }]
-        }]
+        ]
     }
 }
