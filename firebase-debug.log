@@ -681,3 +681,90 @@
     }
   }
 }
+[debug] [2018-02-11T02:48:53.180Z] ----------------------------------------------------------------------
+[debug] [2018-02-11T02:48:53.184Z] Command:       /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/node /Users/ngovancuong/.nvm/versions/node/v8.8.1/bin/firebase deploy --debug
+[debug] [2018-02-11T02:48:53.185Z] CLI Version:   3.17.4
+[debug] [2018-02-11T02:48:53.185Z] Platform:      darwin
+[debug] [2018-02-11T02:48:53.185Z] Node Version:  v8.8.1
+[debug] [2018-02-11T02:48:53.185Z] Time:          Sun Feb 11 2018 09:48:53 GMT+0700 (+07)
+[debug] [2018-02-11T02:48:53.186Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-11T02:48:53.199Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-11T02:48:53.199Z] > authorizing via signed-in user
+[debug] [2018-02-11T02:48:53.202Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/personal-firebase-4bd2d  
+  
+ Sun Feb 11 2018 09:48:53 GMT+0700 (+07)
+[debug] [2018-02-11T02:48:54.689Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-11T02:48:54.690Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/personal-firebase-4bd2d/tokens  
+  
+ Sun Feb 11 2018 09:48:54 GMT+0700 (+07)
+[debug] [2018-02-11T02:48:55.992Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'personal-firebase-4bd2d'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing _site directory for upload...
+[debug] [2018-02-11T02:48:57.492Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/personal-firebase-4bd2d/uploads/-L51kzeYzd76pGUVwsg8?fileCount=35&message=  
+  
+ Sun Feb 11 2018 09:48:57 GMT+0700 (+07)
+[debug] [2018-02-11T02:49:04.908Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-11T02:49:04.909Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 35 files uploaded successfully
+[debug] [2018-02-11T02:49:06.340Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/personal-firebase-4bd2d/releases  
+ { hosting: 
+   { public: '_site',
+     ignore: [ '**/.*', 'firebase.json' ],
+     headers: [ [Object] ],
+     version: '-L51kzeYzd76pGUVwsg8',
+     prefix: '-L51kzeYzd76pGUVwsg8/',
+     manifest: [] } } 
+ Sun Feb 11 2018 09:49:06 GMT+0700 (+07)
+[debug] [2018-02-11T02:49:07.702Z] <<< HTTP RESPONSE 400
+[debug] [2018-02-11T02:49:07.702Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 400, hosting.headers[0] requires property "source"
+[debug] [2018-02-11T02:49:07.706Z] Error Context: {
+  "body": {
+    "error": {
+      "code": "INVALID_PARAMETER",
+      "message": "hosting.headers[0] requires property \"source\""
+    }
+  },
+  "response": {
+    "statusCode": 400,
+    "body": {
+      "error": {
+        "code": "INVALID_PARAMETER",
+        "message": "hosting.headers[0] requires property \"source\""
+      }
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Sun, 11 Feb 2018 02:49:07 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "98",
+      "connection": "close",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET, PUT, POST, DELETE, OPTIONS",
+      "strict-transport-security": "max-age=31556926; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "deploy.firebase.com",
+        "port": 443,
+        "hostname": "deploy.firebase.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1/projects/personal-firebase-4bd2d/releases",
+        "path": "/v1/projects/personal-firebase-4bd2d/releases",
+        "href": "https://deploy.firebase.com/v1/projects/personal-firebase-4bd2d/releases"
+      },
+      "method": "POST"
+    }
+  }
+}

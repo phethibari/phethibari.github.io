@@ -12,6 +12,7 @@ categories:
 - reactjs
 description:
 - "[Step-by-Step] Tutorial - Bitcoin Price Chart with Reactjs and Chart.js"
+og_image: btc-chart1.png
 ---
 
 ![](/btc-chart1.png)

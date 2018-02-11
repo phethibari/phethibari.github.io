@@ -2,11 +2,20 @@
 <html lang="en">
 <head>
 
+    <meta property="fb:app_id" content="379941215804723" />
     <meta property="og:url" content='https://kphetdev.me{{page.url}}' />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:image" content="https://kphetdev.me/assets/media/bg1.jpg" />
+    {% if page.og_image %}
+    <meta property="og:image" content="https://kphetdev.me/{{page.og_image}}" />
+    {% else %}
+    <meta property="og:image" content="https://kphetdev.me//assets/media/kphett2.jpg" /> 
+    {% endif %}
+    {% if page.description %}
     <meta property="og:description" content="{{ page.description }}" />
+    {% else %}
+    <meta property="og:description" content="Kphetdev.me - Sharing modern programming tip and tutorial." />
+	{% endif %}
     
     {% if site.google_analytics and jekyll.environment == 'production' %}
     {% include analytics.html %}
