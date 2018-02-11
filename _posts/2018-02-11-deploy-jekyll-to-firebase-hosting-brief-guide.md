@@ -73,3 +73,6 @@ Running:
 firebase deploy
 ```
 When command finished, you now can access to site from browser!
+<br /> <br /> <br />
+
+credit: [Chris Banes site](https://chris.banes.me/2017/06/02/jekyll-firebase/)
