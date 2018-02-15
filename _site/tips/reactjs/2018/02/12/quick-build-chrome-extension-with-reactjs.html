@@ -3,14 +3,14 @@
 <head>
 
     <meta property="fb:app_id" content="379941215804723" />
-    <meta property="og:url" content='https://kphetdev.me/tutorial/jekyll/firebase/2018/02/11/deploy-jekyll-to-firebase-hosting-brief-guide.html' />
+    <meta property="og:url" content='https://kphetdev.me/tips/reactjs/2018/02/12/quick-build-chrome-extension-with-reactjs.html' />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Deploy Jekyll to Firebase Hosting - Brief Guide" />
+    <meta property="og:title" content="Quick build Chrome Extension with ReactJS" />
     
-    <meta property="og:image" content="https://kphetdev.me/firebase_jekyll-01.png" />
+    <meta property="og:image" content="https://kphetdev.me/chr-ext-6.png" />
     
     
-    <meta property="og:description" content="The short and simple guide to deploy Jekyll to Firebase Hosting" />
+    <meta property="og:description" content="Quick build Chrome Extension with ReactJS" />
     
     
     
@@ -37,9 +37,9 @@
 
 
 	<meta charset="utf-8">
-	<title>Deploy Jekyll to Firebase Hosting - Brief Guide</title>
+	<title>Quick build Chrome Extension with ReactJS</title>
 	
-    <meta name="description" content="The short and simple guide to deploy Jekyll to Firebase Hosting">
+    <meta name="description" content="Quick build Chrome Extension with ReactJS">
     
 	<meta name="author" content="Kphetdev">
 
@@ -177,7 +177,7 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="page-header">
-  <h2>Deploy Jekyll to Firebase Hosting - Brief Guide </h2>
+  <h2>Quick build Chrome Extension with ReactJS </h2>
 </div>
 	
 <article>
@@ -186,68 +186,112 @@
 	 <span class="post-date">
 	   
 	   February 
-	   11th,
+	   12th,
 	   
 	   2018
 	 </span>
 	  <div class="article_body" style="margin-bottom: 50px; margin-top: 50px;">
-	  <p><img src="/firebase_jekyll-01.png" alt="" /></p>
+	  <p><img src="/chr-ext-6.png" alt="" /></p>
 
 <p><br />
-In this article, we will deploy <strong>Jekyll site to the Firebase Hosting</strong>.
+Few days ago, I just read <a href="https://developer.chrome.com/extensions/getstarted">Getting Started: Building a Chrome Extension</a> and then I found out first paragraph:
+<br /> <br /></p>
+
+<blockquote>
+  <p>Extensions allow you to add functionality to Chrome without diving deeply into native code. <strong>You can create new extensions for Chrome with those core technologies that you’re already familiar with from web development: HTML, CSS, and JavaScript</strong>. If you’ve ever built a web page, you should feel right at home with extensions pretty quickly; we’ll put that to the test right now by walking through the construction of a simple extension that will allow the user to change the background color of the current webpage.</p>
+</blockquote>
+
+<p><br />
+Now we know that with <strong>HTML, CSS and Javascript</strong> we can create chrome extension. But….. why not <strong>Reactjs</strong>? So, let’s try with react.
 <br /><br /></p>
 
-<h2>Why Jekyll with Firebase Hosting?</h2>
+<h3>Create new project</h3>
+<p>Create new project and go to project directory:
+<br /></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create-react-app react-chrome-extension <span class="o">&amp;&amp;</span> <span class="nb">cd </span>react-chrome-extension
+</code></pre></div></div>
 <p><br />
-Because I just published this website blog. Jekyll is good and simple way to start with and it will compile to static files. So, it will good for SEO!
-<br /> <br />
-<strong>And you may think why don’t I use github pages??</strong>
-<br />
-Because github pages cannot serve custom domain site with secure verification (use SSL certificate). 
-<br /> <br />
-That’s why I chose <strong>Firebase Hosting</strong>, it also serve our site over https protocol with free SSL certificate.
+Then, there will be something that we must have to make chrome browser recognise our created extension. That is <code class="highlighter-rouge">manifest.json</code>. Actually, our react default project already included in <code class="highlighter-rouge">public/</code> directory like this:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// public/manifest.json</span>
+
+<span class="p">{</span>
+  <span class="s2">"short_name"</span><span class="p">:</span> <span class="s2">"React App"</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Create React App Sample"</span><span class="p">,</span>
+  <span class="s2">"icons"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"src"</span><span class="p">:</span> <span class="s2">"favicon.ico"</span><span class="p">,</span>
+      <span class="s2">"sizes"</span><span class="p">:</span> <span class="s2">"64x64 32x32 24x24 16x16"</span><span class="p">,</span>
+      <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"image/x-icon"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"start_url"</span><span class="p">:</span> <span class="s2">"./index.html"</span><span class="p">,</span>
+  <span class="s2">"display"</span><span class="p">:</span> <span class="s2">"standalone"</span><span class="p">,</span>
+  <span class="s2">"theme_color"</span><span class="p">:</span> <span class="s2">"#000000"</span><span class="p">,</span>
+  <span class="s2">"background_color"</span><span class="p">:</span> <span class="s2">"#ffffff"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>But for chrome extension, it needs different config for <code class="highlighter-rouge">manifest.json</code>.
+<br /></p>
+
+<p><img src="/chr-ext-1.png" alt="" />
 <br /> <br /></p>
 
-<h2>Let's Start!</h2>
-<p><br /></p>
-<h4>Local Setup</h4>
-<p>Install Firebase tools CLI tools by running:
+<p>Delete old config and replace with new simple config as:
 <br /></p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> firebase-tools
-</code></pre></div></div>
-<p>Then login to firebase by below command and follow the step:
-<br /></p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firebase login
-</code></pre></div></div>
-<p><br /></p>
-<h4>Project Config</h4>
-<p>Running init command:
-<br /></p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firebase init
-</code></pre></div></div>
-<p>Follow step to select <code class="highlighter-rouge">Hosting</code> and <code class="highlighter-rouge">your firebase project</code>. Then you will get 2 new files: <code class="highlighter-rouge">firebase.json</code> and <code class="highlighter-rouge">.firebaserc</code>.
-<br /> <br />
-You don’t have to care about <code class="highlighter-rouge">.firebaserc</code> file. But, let config <code class="highlighter-rouge">firebase.json</code> with following code:</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"hosting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="s2">"_site"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ignore"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"**/.*"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"firebase.json"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-<p>In Jekyll, built project files will be in <code class="highlighter-rouge">_site</code> directory. So, the public directory to deploy will be <code class="highlighter-rouge">_site</code> directory.
-<br /> <br /></p>
-<h4>Done! now let's deploy to Firebase Hosting</h4>
-<p>Running:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firebase deploy
-</code></pre></div></div>
-<p>When command finished, you now can access to site from browser!
-<br /> <br /> <br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// public/manifest.json</span>
 
-<p>credit: <a href="https://chris.banes.me/2017/06/02/jekyll-firebase/">Chris Banes site</a></p>
+<span class="p">{</span>
+    <span class="s2">"short_name"</span><span class="p">:</span> <span class="s2">"Kphetdev.me"</span><span class="p">,</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Kphetdev.me Extension"</span><span class="p">,</span>
+    <span class="s2">"manifest_version"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"browser_action"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"default_popup"</span><span class="p">:</span> <span class="s2">"index.html"</span><span class="p">,</span>
+        <span class="s2">"default_title"</span><span class="p">:</span> <span class="s2">"Kphetdev Extension"</span>
+    <span class="p">},</span>
+    <span class="s2">"permissions"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"activeTab"</span><span class="p">,</span>
+        <span class="s2">"storage"</span>
+    <span class="p">],</span>
+    <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.0"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>By the way, you can found more manifest attributes at <a href="https://developer.chrome.com/extensions/manifest">https://developer.chrome.com/extensions/manifest</a>.
+<br /><br /></p>
+
+<h3>Build and Enjoy!</h3>
+<p>Running <code class="highlighter-rouge">yarn build</code> to build project and built will be in <code class="highlighter-rouge">build/</code> directory.
+<br /></p>
+
+<p>In Chrome, open extension:
+<br /></p>
+
+<p><img src="/chr-ext-2.png" alt="" />
+<br /> <br /></p>
+
+<p>Don’t forget to check Developer Mode on top right page. Then, Click <code class="highlighter-rouge">Load Unpacked extension</code> to install our react app.
+<br /></p>
+
+<p><img src="/chr-ext-3.png" alt="" />
+<br /> <br /></p>
+
+<p>Go to our project and choose <code class="highlighter-rouge">build/</code> directory.
+<br /></p>
+
+<p><img src="/chr-ext-4.png" alt="" />
+<br /> <br /></p>
+
+<p>Finally, if you look at Toolbar you will see new extension there. And surprisingly, it’s working!
+<br /></p>
+
+<p><img src="/chr-ext-5.png" alt="" />
+<br /> <br /></p>
+
+<p>Now we know, and for further guide to publish you can look at <a href="https://developer.chrome.com/webstore/publish">Publish in the Chrome Web Store</a>.</p>
 
       </div>
       
@@ -260,18 +304,13 @@ You don’t have to care about <code class="highlighter-rouge">.firebaserc</code
 		  
 		  
 			 
-				<li><a href="/categories.html#tutorial-ref">
-					tutorial <span>(2)</span>
+				<li><a href="/categories.html#tips-ref">
+					tips <span>(1)</span>
 					,
 				</a></li>
 			 
-				<li><a href="/categories.html#jekyll-ref">
-					jekyll <span>(1)</span>
-					,
-				</a></li>
-			 
-				<li><a href="/categories.html#firebase-ref">
-					firebase <span>(1)</span>
+				<li><a href="/categories.html#reactjs-ref">
+					reactjs <span>(2)</span>
 					
 				</a></li>
 			
@@ -286,29 +325,22 @@ You don’t have to care about <code class="highlighter-rouge">.firebaserc</code
 		  
 			 
 				<li>
-					<a href="/tags.html#tutorial-ref">
-					tutorial <span>(2)</span>
+					<a href="/tags.html#reactjs-ref">
+					reactjs <span>(2)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#jekyll-ref">
-					jekyll <span>(1)</span>
+					<a href="/tags.html#chrome-extension-ref">
+					chrome-extension <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#firebase-ref">
-					firebase <span>(1)</span>
-					,
-					</a>
-				</li>
-			 
-				<li>
-					<a href="/tags.html#firebase-hosting-ref">
-					firebase-hosting <span>(1)</span>
+					<a href="/tags.html#tips-ref">
+					tips <span>(1)</span>
 					
 					</a>
 				</li>
@@ -323,12 +355,12 @@ You don’t have to care about <code class="highlighter-rouge">.firebaserc</code
 		<div>
       <section class="share col-sm-6">
         <h4 class="section-title">Share Post</h4>
-        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Deploy Jekyll to Firebase Hosting - Brief Guide"
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Quick build Chrome Extension with ReactJS"
            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
           <i class="fa fa-twitter fa-lg"></i>
           Twitter
         </a>
-        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/dialog/share?app_id=379941215804723&href=https%3A%2F%2Fkphetdev.me/tutorial/jekyll/firebase/2018/02/11/deploy-jekyll-to-firebase-hosting-brief-guide.html"
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/dialog/share?app_id=379941215804723&href=https%3A%2F%2Fkphetdev.me/tips/reactjs/2018/02/12/quick-build-chrome-extension-with-reactjs.html"
            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
           <i class="fa fa-facebook fa-lg"></i>
           Facebook
@@ -351,10 +383,10 @@ You don’t have to care about <code class="highlighter-rouge">.firebaserc</code
 
 		<ul class="pager">
 		  
-		  <li class="previous"><a href="/tutorial/reactjs/2018/02/10/step-by-step-tutorial-create-bitcoin-price-history-chart-with-reactjs-and-chartjs.html" title="[Step-by-Step] Tutorial - Bitcoin Price Chart with Reactjs and Chart.js">&larr; Previous</a></li>
+		  <li class="previous"><a href="/tutorial/jekyll/firebase/2018/02/11/deploy-jekyll-to-firebase-hosting-brief-guide.html" title="Deploy Jekyll to Firebase Hosting - Brief Guide">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/tips/reactjs/2018/02/12/quick-build-chrome-extension-with-reactjs.html" title="Quick build Chrome Extension with ReactJS">Next &rarr;</a></li>
+			<li class="next disabled"><a>Next &rarr;</a>
 		  
 		</ul>
 
